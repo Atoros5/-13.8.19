@@ -1,0 +1,17 @@
+tickets = int(input('Введите количество билетов которые хотите приобрести:'))
+age = list(map(int,input('Укажите возраст посетителей через пробел:').split()))
+while tickets != len(age):
+    age = list(map(int,input('Количество посетителей не совпадает с количеством билетов.\n'
+                            "Укажите возраст посетителе через пробел").split()))
+price = []
+for i in age:
+    if i in range(0, 18):
+        price.append(0)
+    elif i in range(18, 25):
+        price.append(990)
+    else:
+        price.append(1390)
+if tickets > 3 and sum(price) > 3960: # Скидка даётся если четыре билета оплачиваются
+    print('Сумма к оплате со скидкой 10%:',sum(price)-(sum(price)/10),"рублей")
+else:
+    print('Сумма к оплате:', sum(price), "рублей")
