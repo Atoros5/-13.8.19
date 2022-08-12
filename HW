@@ -11,7 +11,7 @@ for i in age:
         price.append(990)
     else:
         price.append(1390)
-if tickets > 3 and sum(price) > 3960: # Скидка даётся если четыре билета оплачиваются
+if tickets > 3 and sum(price) >= 3960: # Скидка даётся если четыре билета оплачиваются
     print('Сумма к оплате со скидкой 10%:',sum(price)-(sum(price)/10),"рублей")
 else:
     print('Сумма к оплате:', sum(price), "рублей")
